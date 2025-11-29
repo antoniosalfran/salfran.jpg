@@ -1,0 +1,472 @@
+/* ======================
+   COLOR PALETTE
+   ====================== */
+
+:root {
+  --forest: #0b3d2e;   /* forest green */
+  --cream:  #fdf7ec;   /* cream */
+  --navy:   #0f172a;   /* navy */
+}
+
+/* ======================
+   BASE STYLES
+   ====================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--cream);
+  color: #111;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ======================
+   HEADER + NAV
+   ====================== */
+
+header {
+  background-color: var(--forest);
+  color: var(--cream);
+  padding: 1.25rem 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+/* ======================
+   MAIN + FOOTER DEFAULT
+   ====================== */
+
+main {
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+footer {
+  background-color: #061912;
+  color: var(--cream);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ======================
+   HOME PAGE
+   ====================== */
+.home-main {
+  max-width: 1100px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr; /* stack instead of side-by-side */
+  gap: 2rem;
+  justify-items: center; /* center everything */
+  align-items: center;
+  text-align: center; /* center text */
+}
+
+.home-hero-text h2 {
+  font-size: 2.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.home-hero-text p {
+  font-size: 1.02rem;
+  color: #444;
+  margin-bottom: 1.15rem; /* loosen spacing */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-hero-photo {
+  max-width: 420px;
+}
+
+.home-hero-photo img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* MOBILE stays clean */
+@media (max-width: 800px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-photo {
+    max-width: 300px;
+  }
+}
+
+
+/* ======================
+   PORTFOLIO PAGE
+   ====================== */
+
+.portfolio-main {
+  max-width: 1100px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.portfolio-main h2 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-align: center;
+  margin: 0 0 1.75rem 0;
+}
+
+
+.portfolio-intro {
+  font-size: 1.02rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-section {
+  margin-top: 2rem;
+}
+
+.gallery-section h3 {
+  color: var(--forest);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gallery-item {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.75rem;
+  flex: 1 1 calc(50% - 1rem); /* two columns */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 0.25s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.16);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.02);
+}
+
+.gallery-caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* ======================
+   ABOUT PAGE
+   ====================== */
+
+.about-main {
+  max-width: 1100px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  object-fit: cover;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.02rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 800px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    max-width: 100%;
+  }
+}
+
+/* ======================
+   EDUCATION PAGE
+   ====================== */
+
+.education-main {
+  max-width: 1100px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.education-main h2 {
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.education-logos {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.education-logos img {
+  height: 95px;
+  width: auto;
+  filter: grayscale(20%);
+}
+
+.education-photo {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.education-photo img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.education-text h3 {
+  font-size: 1.3rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  color: var(--forest);
+}
+
+.education-text p {
+  font-size: 1.02rem;
+  color: #444;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .education-logos {
+    justify-content: center;
+  }
+}
+
+/* ======================
+   CONTACT PAGE
+   ====================== */
+
+.contact-main {
+  max-width: 1000px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.contact-main h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.contact-photo {
+  max-width: 420px;
+}
+
+.contact-photo img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.contact-info p {
+  font-size: 1.02rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-card {
+  flex: 1 1 180px;
+  background-color: #fdf7ec;
+  border-radius: 10px;
+  border: 1px solid #e7dfc9;
+  padding: 0.9rem 1rem;
+}
+
+.contact-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  color: var(--forest);
+}
+
+.contact-card a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.contact-card a:hover {
+  color: var(--navy);
+}
+
+@media (max-width: 800px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-photo {
+    max-width: 100%;
+  }
+}
+/* ======================
+   PORTFOLIO TEXT RESET
+   ====================== */
+
+
+/* Intro paragraph */
+.portfolio-intro {
+  max-width: 850px;
+  margin: 0 auto 2rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: center;
+}
+
+/* Section headers (Protest / Everyday / Portraits) */
+.gallery-section h3 {
+  color: var(--forest);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Captions */
+.gallery-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Gallery alignment */
+.gallery {
+  justify-content: center;
+}
+/* FORCE Portfolio Header to match Education */
+
+.page-title {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;   /* tighter spacing */
+  text-align: center;
+  margin: 0 0 1.8rem 0;
+  color: #111;
+}
+
+
+
+
+
